@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    height: 100%;
+
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #870000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #190A05, #870000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #190A05, #870000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: beige;
+
+    gap: 8px;
+}
+
+.calc-container {
+    display: flex;
+    flex-direction: column;
+    /* outline */
+
+}
+
+.calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+    padding: 0.5rem;
+    gap: 10px;
+}
+
+.calc-display {
+    display: flex;
+    flex-basis: 100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.calc-display > input {
+    flex-grow: 1;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.calc-buttons > .btn > button {
+    color: black;
+    cursor: pointer;
+    width: 100%;
+}
+
+.calc-buttons > .btn:nth-of-type(17) {
+    grid-column: 1/3;
+}
+
+.calc-buttons > .btn:nth-of-type(18) {
+    grid-column: 3/5;
+}
+
+.switch {
+    display: flex;
+
+    /* Rounded border */
+    border-radius: 9999px;
+
+    /* Size */
+    height: 1rem;
+    width: 2rem;
+
+}
+
+.switch__input {
+    /* Hide the input */
+    display: none;
+}
+
+.switch__circle {
+    /* Rounded border */
+    border-radius: 9999px;
+
+    /* Size */
+    width: 1rem;
+
+    background-color: #fff;
+}
+
+/* ON status */
+.switch--on {
+    background-color: #357edd;
+    border: 1px solid #357edd;
+
+    /* Push the circle to the right */
+    justify-content: flex-end;
+}
+
+/* OFF status */
+.switch--off {
+    background-color: #d1d5db;
+    border: 1px solid #d1d5db;
+}
+.switch--off .switch__circle {
+    border: 1px solid #d1d5db;
+}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+    background-color: gray;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.col {
+    /* height: 36px; */
+    /* width: 36px; */
+    color: white;
+    background-color: brown;
+    /* display: inline-block; */
+}
+
+.col:nth-child(even) {
+    background-color: bisque;
+    color: black;
+}
+
+.col:nth-of-type(1) {
+    grid-column: 1 / 5;
+}
+
+.col:nth-of-type(12) {
+    grid-column: 3 / 13;
+    grid-row: 3/4;
+    /* grid-row: 2; */
+    /* background-color: white; */
+}
+
+.areas-container {
+    display: grid;
+    height: 50%;
+    grid-template-areas:
+        'nav nav nav'
+        'sidenav content content'
+        'sidenav article article'
+        'sidenav footer footer'
+    ;
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* .areas-container>div {
+    height: 36px;
+} */
+
+.navcl {
+    grid-area: nav;
+}
+
+.sidnavcl {
+    grid-area: sidenav;
+}
+
+.con {
+    grid-area: content;
+}
+
+.artctl {
+    grid-area: article;
+}
+
+.footercl {
+    grid-area: footer;
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 4px;
+    }
+
+    .col:nth-of-type(1) {
+        grid-column: 1;
+    }
+
+    .col:nth-of-type(12) {
+        grid-column: 12;
+        /* grid-row: 3/4; */
+        grid-row: 1;
+        /* background-color: white; */
+    }
+}
