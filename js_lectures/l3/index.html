@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="./assets/static/css/styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="calc-container">
+            <div class="calc-header">
+                <div>
+                    <h1>ICPC Registration</h1>
+                </div>
+            </div>
+            <div class="reg-form-container">
+                <form action="" class="reg-form" id="reg-form">
+                    <div class="form-input">
+                        <label for="member-1-name">Member 1 Name</label>
+                        <input type="text" name="member-1-name" id="display">
+                    </div>
+                    <div class="form-input">
+                        <label for="member-1-batch">Member 1 Batch</label>
+                        <input type="text" name="member-1-batch" id="display">
+                    </div>
+                    <!-- program with dropdown -->
+
+                    <div class="form-input">
+                        <label for="program">Program</label>
+                        <select id="program" name="program">
+                            <option value="BSCS">BSCS</option>
+                            <option value="BSAI">BSAI</option>
+                            <option value="BSSE">BSSE</option>
+                            <option value="BSDS">BSDS</option>
+                            <option value="BSCYS">BSCYS</option>
+                        </select>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="payment-recipt">Upload Payment Receipt</label>
+                        <input type="file" name="payment-receipt" id="payment-receipt">
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script defer src="./assets/static/js/main.js"></script>
+</body>
+
+</html>

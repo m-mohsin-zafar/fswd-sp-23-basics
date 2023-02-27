@@ -96,10 +96,71 @@ function Students(fname, lname, batch, age) {
   this.lname = lname;
   this.batch = batch;
   this.age = age;
+}
 
-  this.getFullName = function () {
+Students.prototype.getFullName = function () {
     return this.fname + ' ' + this.lname;
+}
+
+function PGStudents(fname, lname, batch, age, thesis) {
+  Students.call(this, fname, lname, batch, age);
+  this.thesis = thesis;
+}
+PGStudents.prototype = Object.create(Students.prototype);
+
+let pgStudent = new PGStudents('Khuzaima', 'Abbasi', 'CS', 23, 'Deep Learning based blah blah..');
+let goodStudent = new Students('Khuzaima', 'Abbasi', 'CS', 23);
+
+
+class Student {
+  constructor(fname, lname, batch, age) {
+    this.fname = fname;
+    this.lname = lname;
+    this.batch = batch;
+    this.age = age;
+  }
+
+  getFullName() {
+    return this.fname + ' ' + this.lname;
+  }
+  get getAge() {
+    return this.age;
+  }
+  set setAge(age) {
+    this.age = age;
   }
 }
 
-let goodStudent = new Students('Khuzaima', 'Abbasi', 'CS', 23);
+let student = new Student('Khuzaima', 'Abbasi', 'CS', 23);
+
+class PGStudent extends Student {
+  constructor(fname, lname, batch, age, thesis) {
+    super(fname, lname, batch, age);
+    this.thesis = thesis;
+  }
+}
+
+let i1 = [1, 2, 3, 4];
+let i2 = ['A', 'B', 'C', 'D'];
+console.log([...i1, ...i2])
+
+function samForSpread(name, height, weight){
+  text = `Name: ${name}\nHeight: ${height}\nWeight: ${weight}`;
+  console.log(text);
+}
+
+let person = ['Khuzaima', 5.8, 70];
+
+samForSpread(...person);
+
+function samForRest(...anyNumOfArgs){
+  let sumOfSquares = 0;
+  sumOfSquares = anyNumOfArgs.reduce((acc, currVal) =>{
+    return acc + (currVal**2) ;
+  }, 0);
+  return sumOfSquares;
+}
+
+console.log(samForRest(2, 3, 4));
+console.log(samForRest(2, 3, 4, 5, 6));
+console.log(samForRest(20, 4, 5, 9, 11, 13));

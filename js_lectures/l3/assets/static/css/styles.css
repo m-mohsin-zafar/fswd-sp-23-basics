@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    height: 100%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #870000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #190A05, #870000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #190A05, #870000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: beige;
+
+    gap: 8px;
+}
+
+.calc-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+}
+
+.calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+    /* padding: 0.5rem; */
+    margin-bottom: 4px;
+    /* gap: 10px; */
+    font-weight: lighter;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    margin-bottom: 8px;
+}
+
+.form-input>label{
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+}
+
+.form-input>input, select {
+    flex-grow: 1;
+    border-radius: 4px;
+    background-color: #181F32;
+    border-color: #181F32;
+    padding: 8px;
+    border-style: none;
+    color: white;
+    font-size: 0.6rem;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    background-color: #252D44;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 50% 50%;
+}
+
+.form-buttons > button {
+    flex-grow: 1;
+    border-radius: 4px;
+    background-color: #181F32;
+    border-color: #181F32;
+    padding: 8px;
+    border-style: none;
+    color: white;
+    font-size: 0.6rem;
+    cursor: pointer;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.form-buttons > button:hover {
+    background-color: bisque;
+    color: black;
+}
+
+
+@media screen and (max-width: 480px) {
+    
+    .calc-container {
+        flex-direction: column;
+        flex-basis: 70%;
+    }
+}
