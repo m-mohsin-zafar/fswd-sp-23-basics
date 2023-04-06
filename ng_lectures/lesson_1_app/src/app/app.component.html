@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>This is my first app</h1>
+  <p>Project Name: <span>{{title}}</span></p>
+
+  <!-- Interpolation -->
+  <h5 id="test">{{student.name}}</h5>
+  <h5 [textContent]="student.name"></h5>
+  <div class="alert" role="alert" [ngClass]="student.isMarried ? 'alert-light' : 'alert-dark'"
+    [textContent]="student.isMarried ? 'Married' : 'Unmarried'">
+
+  </div>
+  <h5 [style.color]="student.isMarried ? 'green' : 'red'">{{student.age}}</h5>
+  <h5>{{student.isMarried}}</h5>
+
+  <!-- Bindings -->
+  <!-- From Model to VIew []
+        From View to Model ()
+        BIdirectional [()]  -->
+  <i class="bi fs-1" [ngClass]="isLiked ? 'bi-heart-fill' : 'bi-heart'" (click)="toggleLike()"></i>
+
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <!-- <input type="text" (change)="readText($event)" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">-->
+    <input [ngModel]="typedValue" (ngModelChange)="typedValue = $event"  type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""> 
+    <input [(ngModel)]="typedValue"  type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""> 
+    <small id="helpId" class="form-text text-muted">Help text</small>
+  </div>
+
+  <h5>{{typedValue}}</h5>
+
+<ul class="list-group list-group-numbered">
+    <li *ngFor="let name of studentNames" class="list-group-item">{{name}}</li>
+    
+</ul>
+  <app-banner></app-banner>
+</div>

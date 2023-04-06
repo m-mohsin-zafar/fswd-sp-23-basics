@@ -1,0 +1,47 @@
+p {
+    color: blue;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.main {
+    width: 100%;
+}
+
+.clm {
+    width: 25%;
+    float: left;
+    height: 10vh;
+    background-color: burlywood;
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 640px){
+    .clm {
+        width: 50%;
+    }
+}
+
+.nav-con {
+    display: flex;
+}
+
+.eg-con {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    width: 50%;
+    height: 50vh;
+    background-color: brown;
+    margin: 4px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.eg-con > div {
+    background-color: beige;
+    padding: 4px;
+    text-align: center;
+    width: 50%;
+}
