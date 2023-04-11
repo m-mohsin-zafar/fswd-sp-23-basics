@@ -1,0 +1,25 @@
+<div class="card shadow">
+    <img class="card-img-top img-fluid mx-auto p-3" style="max-width: 128px;" [src]=product.image alt="Title">
+    <div class="card-body">
+      <h5 class="card-title text-black-50">
+        {{product.title}}}
+      </h5>
+      <p class="card-text text-black-50">
+        {{product.description | summary: 20}}
+      </p>
+    </div>
+    <div class="card-footer border-info  d-flex justify-content-between fw-light align-items-center">
+      <p> <i class="bi bi-star-fill"></i> {{product.rating.rate}}</p>
+      <p class="fw-bold"> <span class="badge bg-secondary">Price</span> {{product.price | currency:"EUR" }}</p>
+    </div>
+    <div
+      class="row pb-2 px-2 align-items-center justify-content-center flex-column flex-sm-column flex-md-row h-100">
+      <div class="col">
+        <p class="fw-lighter my-2">Votes: {{product.rating.count}}</p>
+      </div>
+
+      <div class="col">
+        <button (click)="addToCart(product)" type="button" class="btn btn-outline-primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
