@@ -1,0 +1,52 @@
+<h1>Product Listings</h1>
+<div class="row p-3 my-2">
+  <button type="button" name="" id=""
+          class="btn btn-secondary btn btn-block"
+          (click)="loadProducts()"
+  >
+    Load Products
+  </button>
+</div>
+<div class="row p-3 my-2">
+  <div class="input-group">
+    <label for="">Add Product</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+           (keyup.enter)="addProduct($event.target)"
+    >
+  </div>
+  <button type="button" name="" id=""
+          class="btn btn-primary btn-sm btn-block">
+    Add Product
+  </button>
+</div>
+
+<div class="row" *ngIf="products.length > 0; then numProducts;  else noProducts">
+
+</div>
+
+<div class="list-group" *ngIf="products.length > 0">
+
+  <li *ngFor="let product of products; trackBy: trackByTitle" class="list-group-item list-group-item-action">
+    {{product.title}}
+    <button type="button" class="btn btn-primary-outline">View Details</button>
+    <button type="button" class="btn btn-danger-outline">Delete</button>
+    <button type="button" class="btn btn-warning-outline">Edit</button>
+  </li>
+
+</div>
+<ng-template #noProducts>
+  <div class="alert alert-info" role="alert">
+    <strong>We didn't find any products yet..!</strong>
+  </div>
+</ng-template>
+
+<ng-template #numProducts>
+  <div class="alert alert-info" role="alert">
+    <strong>We have {{products.length + 1}} products in db.</strong>
+  </div>
+</ng-template>
+<!--<div class="row" *ngIf="products.length === 0">-->
+<!--  <div class="alert alert-info" role="alert">-->
+<!--    <strong>We didn't find any products yet..!</strong>-->
+<!--  </div>-->
+<!--</div>-->
