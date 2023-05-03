@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { DetailsCardComponent } from './details-card/details-card.component';
-import { ProductsTableComponent } from './products-table/products-table.component';
-import { ProductCategoryViewComponent } from './product-category-view/product-category-view.component';
-import { FypFormComponent } from './fyp-form/fyp-form.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {DetailsCardComponent} from './details-card/details-card.component';
+import {ProductsTableComponent} from './products-table/products-table.component';
+import {ProductCategoryViewComponent} from './product-category-view/product-category-view.component';
+import {FypFormComponent} from './fyp-form/fyp-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { LoginFormComponent } from './login-form/login-form.component';
+import {LoginFormComponent} from './login-form/login-form.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,13 +20,15 @@ import { LoginFormComponent } from './login-form/login-form.component';
     FypFormComponent,
     LoginFormComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

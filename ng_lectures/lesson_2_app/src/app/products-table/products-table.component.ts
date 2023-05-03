@@ -19,7 +19,9 @@ export class ProductsTableComponent implements OnInit {
   }
 
   loadProducts(){
-    this.products = this.productsService.getAll();
+    this.productsService.getAll().subscribe((response: any) => {
+      this.products = response.body;
+    });
   }
 
   addProduct(ref: any ){
@@ -39,16 +41,23 @@ export class ProductsTableComponent implements OnInit {
     this.products.push(newProduct);
   }
 
-  viewProduct(product: any){
-
+  viewProduct(productId: number){
+    this.productsService.getOne(productId as number).subscribe((response: any) => {
+      console.log(response);
+    });
   }
 
   deleteProduct(product: any){
-
+    let index = this.products.indexOf(product);
+    // this.products.splice(index, 1);
+    this.productsService.delete(product.id).subscribe((response: any) => {
+      console.log(response);
+      this.products.splice(index, 1);
+    });
   }
 
   editProduct(product: any){
-    
+
   }
 
   trackByTitle(index: any, item: any) {

@@ -41,7 +41,7 @@
       <td class="col-3">{{product.category}}</td>
       <td class="col-2">{{product.price}}</td>
       <td class="col-3">
-        <button type="button" (click)="viewProduct(product)" class="btn btn-primary-outline"><i class="bi bi-view-list"></i></button>
+        <button type="button" (click)="viewProduct(product.id)" class="btn btn-primary-outline"><i class="bi bi-view-list"></i></button>
         <button type="button" (click)="deleteProduct(product)" class="btn btn-danger-outline"><i class="bi bi-trash"></i></button>
         <button type="button" (click)="editProduct(product)" class="btn btn-warning-outline"><i class="bi bi-pen"></i></button>
       </td>
