@@ -1,42 +1,68 @@
-<h1>Product Listings</h1>
 <div class="row p-3 my-2">
+  <h1>Product Listings</h1>
   <button type="button" name="" id=""
-          class="btn btn-secondary btn btn-block"
+          class="btn btn-outline-primary btn btn-block"
           (click)="loadProducts()"
   >
-    Load Products
+    Load All Products
   </button>
 </div>
-<div class="row p-3 my-2">
-  <div class="input-group">
-    <label for="">Add Product</label>
-    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
-           (keyup.enter)="addProduct($event.target)"
-    >
-  </div>
-  <button type="button" name="" id=""
-          class="btn btn-primary btn-sm btn-block">
-    Add Product
-  </button>
-</div>
+
+<!--<div class="row p-3 my-2">-->
+<!--  <div class="input-group">-->
+<!--    <label for="">Add Product</label>-->
+<!--    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""-->
+<!--           (keyup.enter)="addProduct($event.target)"-->
+<!--    >-->
+<!--  </div>-->
+<!--  <button type="button" name="" id=""-->
+<!--          class="btn btn-primary btn-sm btn-block">-->
+<!--    Add Product-->
+<!--  </button>-->
+<!--</div>-->
 
 <div class="row" *ngIf="products.length > 0; then numProducts;  else noProducts">
 
 </div>
 
-<div class="list-group" *ngIf="products.length > 0">
-
-  <li *ngFor="let product of products; trackBy: trackByTitle" class="list-group-item list-group-item-action">
-    {{product.title}}
-    <button type="button" class="btn btn-primary-outline">View Details</button>
-    <button type="button" class="btn btn-danger-outline">Delete</button>
-    <button type="button" class="btn btn-warning-outline">Edit</button>
-  </li>
-
+<div class="table-responsive" *ngIf="products.length > 0">
+  <table class="table table-sm table-striped">
+    <thead>
+    <tr class="row">
+      <th class="col-4">Product Title</th>
+      <th class="col-3">Category</th>
+      <th class="col-2">Price</th>
+      <th class="col-3">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products;" class="row">
+      <td class="col-4">{{product.title}}</td>
+      <td class="col-3">{{product.category}}</td>
+      <td class="col-2">{{product.price}}</td>
+      <td class="col-3">
+        <button type="button" (click)="viewProduct(product)" class="btn btn-primary-outline"><i class="bi bi-view-list"></i></button>
+        <button type="button" (click)="deleteProduct(product)" class="btn btn-danger-outline"><i class="bi bi-trash"></i></button>
+        <button type="button" (click)="editProduct(product)" class="btn btn-warning-outline"><i class="bi bi-pen"></i></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
+
+<!--<div class="list-group" *ngIf="products.length > 0">-->
+
+<!--  <li *ngFor="let product of products; trackBy: trackByTitle" class="list-group-item list-group-item-action">-->
+<!--    {{product.title}}-->
+<!--    <button type="button" class="btn btn-primary-outline">View Details</button>-->
+<!--    <button type="button" class="btn btn-danger-outline">Delete</button>-->
+<!--    <button type="button" class="btn btn-warning-outline">Edit</button>-->
+<!--  </li>-->
+
+<!--</div>-->
 <ng-template #noProducts>
   <div class="alert alert-info" role="alert">
-    <strong>We didn't find any products yet..!</strong>
+    <strong><i class="bi bi-exclamation-triangle"></i> We didn't find any products yet..!</strong>
   </div>
 </ng-template>
 

@@ -39,9 +39,17 @@ export class ProductsTableComponent implements OnInit {
     this.products.push(newProduct);
   }
 
-  // trackByFn(index: any, item: any) {
-  //
-  // }
+  viewProduct(product: any){
+
+  }
+
+  deleteProduct(product: any){
+
+  }
+
+  editProduct(product: any){
+    
+  }
 
   trackByTitle(index: any, item: any) {
     return (item) ? item.title: null;

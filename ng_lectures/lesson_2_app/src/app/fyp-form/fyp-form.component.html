@@ -1,0 +1,83 @@
+<div class="container p-3">
+  <form #fypform=ngForm (ngSubmit)="submitForm(fypform)">
+    <div class="memberinfo mb-2" *ngFor="let member of defaultStudentIdentifiers">
+      <div class="row">
+        <div class="col-5">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="regNoMember-{{member}}" id="regNoMember-{{member}}" placeholder="2020001">
+            <label for="regNoMember-{{member}}">Registration Number</label>
+          </div>
+        </div>
+        <div class="col-7">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="fullNameMember-{{member}}" id="fullNameMember-{{member}}" placeholder="Jane DOe">
+            <label for="fullNameMember-{{member}}">Full Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input required ngModel type="radio" class="form-check-input" name="programMember-{{member}}" id="programA-{{member}}" value="bsce">
+              BS CE
+            </label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input required ngModel type="radio" class="form-check-input" name="programMember-{{member}}" id="programB-{{member}}" value="bscs">
+              BS CS
+            </label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input required ngModel type="radio" class="form-check-input" name="programMember-{{member}}" id="programC-{{member}}" value="bsai">
+              BS AI
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="projectTitle" id="projectTitle" placeholder="The overly ambitious bot">
+          <label for="projectTitle">Project Title</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-floating mb-3">
+          <textarea class="form-control" name="projectAbstract" id="projectAbstract" placeholder="The overly ambitious bot"></textarea>
+          <label for="projectAbstract">Project Abstract</label>
+        </div>
+      </div>
+
+    </div>
+<!--    <div class="row">-->
+<!--      <div class="alert alert-danger" *ngIf="name_1.touched && name_1.invalid" role="alert">-->
+<!--        <div *ngIf="name_1?.errors?.['minlength']">-->
+<!--          <strong>Min Length not satisfied for Name</strong>-->
+<!--        </div>-->
+<!--        <div *ngIf="name_1?.errors?.['required']">-->
+<!--          <strong>Name is a required field</strong>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="row py-2">
+      <button type="submit" class="btn btn-primary"  >Submit</button>
+    </div>
+  </form>
+</div>
+
+
