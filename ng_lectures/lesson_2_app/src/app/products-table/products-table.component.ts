@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../services/products.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-products-table',
@@ -11,7 +12,8 @@ export class ProductsTableComponent implements OnInit {
   products: any[] = []
 
   constructor(
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,9 +44,11 @@ export class ProductsTableComponent implements OnInit {
   }
 
   viewProduct(productId: number){
-    this.productsService.getOne(productId as number).subscribe((response: any) => {
-      console.log(response);
-    });
+    // this.productsService.getOne(productId as number).subscribe((response: any) => {
+    //   console.log(response);
+    // });
+    // Navigate to single product view
+    this.router.navigate(['product-listings', productId]);
   }
 
   deleteProduct(product: any){

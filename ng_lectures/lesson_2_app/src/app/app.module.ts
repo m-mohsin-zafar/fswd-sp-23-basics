@@ -10,6 +10,9 @@ import {FypFormComponent} from './fyp-form/fyp-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginFormComponent} from './login-form/login-form.component';
 import {HttpClientModule} from "@angular/common/http";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SingleProductViewComponent } from './single-product-view/single-product-view.component';
+// import { TestModalComponent } from './modals/test-modal/test-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import {HttpClientModule} from "@angular/common/http";
     ProductsTableComponent,
     ProductCategoryViewComponent,
     FypFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SingleProductViewComponent,
+    // TestModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
