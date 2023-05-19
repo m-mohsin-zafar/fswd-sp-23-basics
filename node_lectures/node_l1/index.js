@@ -33,6 +33,7 @@ const server = http.createServer((req, res) => {
         res.on('end', () => {
             // console.log(JSON.parse(data));
             data = JSON.parse(data);
+
         })
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
